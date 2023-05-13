@@ -1,0 +1,95 @@
+$freshBlue: #74d6ec;
+$TextGray :#606060;
+$Spacegray: #ebebeb;
+$black: #000000;
+.text{ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+p,a,h4{    @extend .text;}
+div {h4{font-weight: bold;font-size: 600;}}
+section{
+    height: auto;
+}
+
+/* NAVBAR */
+#logo{ height: 40px; width: 40px; margin: 10px;}
+#navBar{float: right;}
+.nav-link{color: $TextGray; font-weight: bold;}
+.nav-link:hover {color: rgb(0, 0, 0);}
+.nav-item{ height: max-content; width: max-content; margin-top:10px; font-size: small; border-radius: 10px; padding: 2px;}
+.nav-item:hover {background-color: #70d4eb96; }
+
+
+/* FOOTER */
+#footer{background-color:$freshBlue; }
+
+/* CREATELISTING FORM */
+#form_header{@extend .text; padding: 10px; background-color: $freshBlue; }
+#form_body{ @extend .text; background-color: #60606017; padding: 10px;  }
+.form_label{float: left;} .form_field{ margin-left: 100px;}
+#form_field_container{width: 500px; height: 70px; margin: 10px;}
+.submitButton{ border-width: 0px; margin:20px ;  background-color: $freshBlue; color: rgb(0, 0, 0);}
+
+
+/* INDEX PAGE */
+#categories{ @extend .text; background-color: #74d6ec;  }
+#category_each{ @extend .text;  border-radius: 3px ;  color: #000000;}
+
+.listings {  border-width: 5px;  height: 350px; border-radius: 10px; }
+.listings:hover{ box-shadow: 0 0 20px $freshBlue;}
+#product_image{height: 200px; width: 200px;}
+.images{ height: 300px; width: 400px; background-color: #74d7ec;} 
+
+
+/* INDIVIDUAL LISTING */
+#productTitle{@extend .text; font-size: 35px;}
+#listedBy{ @extend .text; color: $black;}
+#starting_price{ width: 50%; float: left; margin-right:0px; text-align: center;}
+#top_bid{ width: 50%; float: right; text-align: start;}
+
+.price{  font-size: 30px;}
+#PlaceBid{  @extend .text; width: 400px; height:auto ; margin-left: 0;}
+#Watchlist{ background-color: $freshBlue; border-width: 0px; display: none;}
+#Categories{ margin: 20px;@extend .text; font-size: 30px; height: 200px;}
+#CommentSection{ padding: 40px; text-align: start;  align-self: center; height: auto;}
+#commentbox{ height: fit-content; background-color: white; align-self: center; padding: 10px;
+    padding-left: 20px; margin-left: 15px; margin-bottom: 20px;}
+#userid{ width: 20ch; float: left; margin-right: 30px;}
+
+
+
+/* PROFIL/ACCOUNTS PAGE */
+#profile_header{@extend #form_header}
+#links{
+    height: 200px;
+    background-color: $Spacegray;
+}
+
+#linksections{
+    color: $TextGray;
+}
+#MyListings{
+    @extend .text;
+    margin: 20px;
+}
+
+.LandB{
+    padding: 20px;
+    margin: 70px;
+    width: fit-content;
+    height: fit-content;
+
+}
+
+/* WATCHLIST PAGE */
+#watchlist_header{@extend #form_header}
+
+
+
+
+
+
+
+p{
+    @extend .text;
+}
+
+

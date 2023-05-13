@@ -1,0 +1,62 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+<div id="profile_header">
+    <h3 >Hello {{user.username}}</h3> 
+</div>{% comment %} i changed this from buser to use. not sure if i broke something  {% endcomment %}
+
+
+<div id="LandB">
+    
+    <div id="MyListings" >
+        <h4 >Open Listings</h4>
+        <p>Your listings still open for bidding will show here</p>
+        {% for listing in openlistings %}
+        <div class="listings" >
+            <div classes="images" >
+                <img src="/media/{{ listing.image }}" alt="{{ listing.caption }} " style="height: 230px; width: 200px;" >
+                
+            </div>
+            <a href="{% url 'listing' listing.id %}">{{ listing.Item_Name }}</a>  <br> Starting price:${{ listing.Starting_price }} <br> <!-- Currently bidding at {{listing.Highest_Bid}}  -->
+         <button class="submitButton" style="margin-left: 0px;"><a href="{% url 'closeAuction' listing.id %}">Close Auction</a></button>
+        </div>      
+          
+        {% empty %}
+         You have no open Listings 
+          
+        {%endfor%}
+
+    </div>
+
+    <div id="MyListings" >
+        <h4 >Closed Listings</h4>
+        <p>Your  listings no longer available for bidding </p>
+        {% for listing in closedlistings %}
+        <div class="listings" >
+            <div classes="images" >
+                <img src="/media/{{ listing.image }}" alt="{{ listing.caption }} " style="height: 230px; width: 200px;" >
+                
+            </div>
+            <a href="{% url 'listing' listing.id %}">{{ listing.Item_Name }}</a>  <br> Starting price:${{ listing.Starting_price }} <br> <!-- Currently bidding at {{listing.Highest_Bid}}  -->
+        </div>      
+          
+        {% empty %}
+         You have no closed Listings 
+          
+        {%endfor%}
+        
+    </div>
+   
+
+    <div id="MyListings">
+        
+        <h4>Won Listings</h4>
+        <p>Listings you have won will show here </p>
+        You haven't won any bids. Go bid on something!
+    </div>
+</div>
+     
+
+
+{% endblock %}

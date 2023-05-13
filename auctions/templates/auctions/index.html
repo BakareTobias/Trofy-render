@@ -1,0 +1,55 @@
+{% extends "auctions/layout.html" %}
+{% load static%}
+
+{% block body %}
+    <!-- SECTION1: categories -->
+    <section id="2" class="p-sm-3 p-1">
+        <div id="categories" class="container-fluid ">
+            <div class="d-sm-flex justify-content-start">
+                <div class="text-sm-start text-center p-sm-4">
+                    <h3 class="card-title">Browse by category</h3>
+                </div>
+                <div class="  p-4">
+                    {%for category in categories%}
+                        <a href="{%url 'categories' category%}" id="category_each" class="mx-2">{{category}}</a> 
+                    {%endfor%}
+                </div>
+            </div>
+
+        </div>  
+    </section>    
+        
+    <!-- LISTINGS SECTION -->
+    <section id="3" class="p-3 p-sm-1">
+        <div class="container-fluid">
+            <div id="products" class="d-flex flex-wrap justify-content-around">
+                {%for listing in listings%}
+                    <div  class="listings card text-center col-sm-3 col-12 p-2 m-1 mb-4 " >
+
+                        <a href="{% url 'listing' listing.id %}" >
+                            <img src="media/{{ listing.image }}" alt="{{ listing.caption }} " id="product_image" class="mb-3 img-fluid" ><br>
+                            {{ listing.Item_Name }}
+                            <br> Starting price:${{ listing.Starting_price }} 
+                        </a>
+                        
+                          
+                    </div>
+                   
+                {%empty%}
+                    All listings have been bought. Come back later
+                {%endfor%}
+
+            </div>
+        </div>
+
+    </section>
+        
+        
+        
+    
+  
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'auctions/load_products.js' %}"></script>
+ {% endblock %}

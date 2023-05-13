@@ -1,0 +1,208 @@
+.text, #MyListings, #Categories, #PlaceBid, #listedBy, #productTitle, #category_each, #categories, #form_body, #form_header, #watchlist_header, #profile_header, p, a, h4 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+div h4 {
+  font-weight: bold;
+  font-size: 600;
+}
+
+section {
+  height: auto;
+}
+
+/* NAVBAR */
+#logo {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+}
+
+#navBar {
+  float: right;
+}
+
+.nav-link {
+  color: #606060;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: rgb(0, 0, 0);
+}
+
+.nav-item {
+  height: -moz-max-content;
+  height: max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 10px;
+  font-size: small;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.nav-item:hover {
+  background-color: rgba(112, 212, 235, 0.5882352941);
+}
+
+/* FOOTER */
+#footer {
+  background-color: #74d6ec;
+}
+
+/* CREATELISTING FORM */
+#form_header, #watchlist_header, #profile_header {
+  padding: 10px;
+  background-color: #74d6ec;
+}
+
+#form_body {
+  background-color: rgba(96, 96, 96, 0.0901960784);
+  padding: 10px;
+}
+
+.form_label {
+  float: left;
+}
+
+.form_field {
+  margin-left: 100px;
+}
+
+#form_field_container {
+  width: 500px;
+  height: 70px;
+  margin: 10px;
+}
+
+.submitButton {
+  border-width: 0px;
+  margin: 20px;
+  background-color: #74d6ec;
+  color: rgb(0, 0, 0);
+}
+
+/* INDEX PAGE */
+#categories {
+  background-color: #74d6ec;
+}
+
+#category_each {
+  border-radius: 3px;
+  color: #000000;
+}
+
+.listings {
+  border-width: 5px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.listings:hover {
+  box-shadow: 0 0 20px #74d6ec;
+}
+
+#product_image {
+  height: 200px;
+  width: 200px;
+}
+
+.images {
+  height: 300px;
+  width: 400px;
+  background-color: #74d7ec;
+}
+
+/* INDIVIDUAL LISTING */
+#productTitle {
+  font-size: 35px;
+}
+
+#listedBy {
+  color: #000000;
+}
+
+#starting_price {
+  width: 50%;
+  float: left;
+  margin-right: 0px;
+  text-align: center;
+}
+
+#top_bid {
+  width: 50%;
+  float: right;
+  text-align: start;
+}
+
+.price {
+  font-size: 30px;
+}
+
+#PlaceBid {
+  width: 400px;
+  height: auto;
+  margin-left: 0;
+}
+
+#Watchlist {
+  background-color: #74d6ec;
+  border-width: 0px;
+  display: none;
+}
+
+#Categories {
+  margin: 20px;
+  font-size: 30px;
+  height: 200px;
+}
+
+#CommentSection {
+  padding: 40px;
+  text-align: start;
+  align-self: center;
+  height: auto;
+}
+
+#commentbox {
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  align-self: center;
+  padding: 10px;
+  padding-left: 20px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+#userid {
+  width: 20ch;
+  float: left;
+  margin-right: 30px;
+}
+
+/* PROFIL/ACCOUNTS PAGE */
+#links {
+  height: 200px;
+  background-color: #ebebeb;
+}
+
+#linksections {
+  color: #606060;
+}
+
+#MyListings {
+  margin: 20px;
+}
+
+.LandB {
+  padding: 20px;
+  margin: 70px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+/* WATCHLIST PAGE *//*# sourceMappingURL=styles.css.map */

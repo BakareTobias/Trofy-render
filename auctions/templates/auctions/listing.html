@@ -1,0 +1,74 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+ <script>
+    var listing_id ="{{listing.id}}";
+    var listing_name = "{{listing.Item_Name}}"
+    var watchlist = "{{watchlist}}"
+ </script>
+    <div>
+        <div  class="d-md-flex">
+            <div  class="m-5 p-5">
+                <img src="/media/{{ listing.image }}" alt="{{ listing.caption }} " class="" >
+            </div>
+            <div class="mt-5">
+                <div  id="productTitle"> {{ listing.Item_Name }}  </div>
+                <h6 id="listedBy">Listed by {{listing.owner}}<a id="listedBy" href="{% url 'profile' listing.owner.id %}"> </a> </h6>
+                <hr> 
+                <div class="text" >
+                    {{ listing.Description }} 
+                    <hr>
+                    <div id="starting_price" > <u>Price</u>  <h5 class="price"> ${{ listing.Starting_price}} </h5> 
+                    </div>
+                  <form action="" method="post">
+                        {% csrf_token %}
+                        <h5>No. of Items</h5>
+                        <input type="number" id="quantity" name="quantity" min="1" max="1000" value="0">
+                        <input type="submit" value="Place order">
+                  </form>
+                 
+                   
+
+                </div>
+            </div>
+        </div>
+        <div id="Categories"> <br>
+            View other listings in: <a href="{% url 'categories' listing.category.Category %}">{{listing.category}}</a> 
+
+        </div>
+        <hr>
+        {% if user.is_authenticated %}
+        
+        <div id="CommentSection">
+            <form action="{% url 'leaveComment' listing.id %}" method="post" style="margin-left: 15px;">
+                {% csrf_token %}
+                {{ comment_form }}
+                <input type="submit" value="Send Comment" class="submitButton  ">
+
+            </form>
+            <h3 >Comment Section</h3>
+            {% for comment in comments%}
+            <div id="commentbox">
+                <div id="userid">
+                    <h6>{{comment.Commenter_id}}</h6> 
+                </div>
+                <div id="userComment">
+                    {{comment.Comment}}
+                </div>
+                
+                    
+            </div>
+            {%empty%}
+            <p>Wow, such empty. Be the first to comment! </p>
+            {% endfor %}  
+            
+        </div>
+        {% else %}
+        <div id="PlaceBid" style="text-align: center; padding-top: 20px;">
+            <h4>Sign-in to place bids/leave comments</h4> 
+        </div>
+            
+        {% endif %}
+    </div>
+{% endblock %}

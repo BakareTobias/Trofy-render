@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div id="form_header"> <h3 >Hey there,you want to list an item? <br><h4 >Just fill out the form below</h4></h3></div>
+    
+    <div id="form_body">
+        <form action="{% url 'createListing' %}" method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {% for field in form %}
+                    <div id="form_field_container" >
+                        {{ field.errors }}
+                        <div class='form_label'>{{ field.label_tag }}</div>  <div class='form_field'>{{ field }}</div>
+                        {% if field.help_text %}
+                            <p class="help">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+                <input type="submit" class="submitButton" value="Create Listing">
+            </form>
+
+    </div>
+    
+    
+    
+
+{% endblock%}
