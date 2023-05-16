@@ -4,7 +4,7 @@
     <h3 class="xxx">Listings in {{ cat_name }}</h3>
     <div id="products">
         {%for listing in listings%}
-        <div class="listings" >
+        <div class="listings card text-center col-sm-3 col-12 p-2 m-1 mb-4 ">
             <div classes="images" >
                 <img src="/media/{{ listing.image }}" alt="{{ listing.caption }} " style="height: 230px; width: 200px;" >
                 

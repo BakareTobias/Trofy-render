@@ -11,7 +11,7 @@ from .models import Bid, Category, Listing, User,Comment, WatchList
 def index(request):
     categories= Category.objects.all()
     return render(request, "auctions/index.html",{
-        "listings":Listing.objects.filter(Auction_closed=False),
+        "listings":Listing.objects.all(),
         "categories":categories,
     })
 
@@ -79,7 +79,6 @@ class CommentForm(forms.Form):
 
 def listing_details(request,listing):
     list1ing= Listing.objects.get(pk=listing)
-    closed = list1ing.Auction_closed
     user_watchlist = WatchList.objects.filter(owner = request.user.pk)
     try:
         top_bid =  Bid.objects.filter(item_id=listing).order_by('-Bid_placed').first().Bid_placed
@@ -104,7 +103,6 @@ def listing_details(request,listing):
         "topBidowner":top_bid_owner,
         "comment_form":CommentForm(),
         "comments":comments,
-        "closed":closed,
         "watchlist": user_watchlist
 })
 
@@ -221,8 +219,11 @@ def watchlist_remove(request,listing_id):
     watchlist_item=WatchList.objects.get(id=listing_id)
     watchlist_item.delete()
     
+    return render(request, "auctions/watchlist.html",{
+        "watchlist":WatchList.objects.filter(owner =request.user.id)
 
-    return HttpResponseRedirect(reverse("listing",args=(watchlist_item.item_id.pk,)))
+    })
+    """ return HttpResponseRedirect(reverse("listing",args=(watchlist_item.item_id.pk,))) """
 
 
 
