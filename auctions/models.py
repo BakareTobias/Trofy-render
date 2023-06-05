@@ -20,8 +20,7 @@ class Listing(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name="categories")
     """ Description = models.CharField(max_length=264) """
     Starting_price = models.IntegerField()
-    """ Highest_Bid = models.IntegerField(default=0)
-    Auction_closed = models.BooleanField(default=False) """
+
 
     def __str__(self):
         return f" Listing {self.pk}: {self.Item_Name} "
@@ -43,7 +42,6 @@ class Comment(models.Model):
         return f" Comment {self.pk} by {self.Commenter_id} on {self.item_id}"
 
 class WatchList(models.Model):
-    """ id = models.AutoField(primary_key=True) """
     item_id = models.ForeignKey(Listing,on_delete=models.CASCADE, related_name="watchlist_item",)
     owner = models.ForeignKey(User,on_delete=models.CASCADE,related_name="watchlist_owner")
 

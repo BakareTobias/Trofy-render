@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'commerce.wsgi.application'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     } 
-} """
+}
 DATABASES={
    'default':{
       'ENGINE':'django.db.backends.postgresql_psycopg2',
@@ -100,6 +100,16 @@ DATABASES={
       'HOST':'localhost',
       'PORT':'5432',
    }
+}
+ """
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'trofy',
+        'USER': 'tobi',
+        'PASSWORD': 'zhSMteRUE0M0vnFzvPjSZvSjw0CCwhcc',
+        'HOST': 'dpg-chn3fam7avj3o316dqv0-a.oregon-postgres.render.com',
+    }
 }
 
 AUTH_USER_MODEL = 'auctions.User'

@@ -34,6 +34,21 @@ def login_view(request):
             })
     else:
         return render(request, "auctions/login.html")
+    
+
+    """ user = authenticate(request, username=username, password=password)
+        if user is not None:
+            # Check which user model the account belongs to
+            if CustomUserModel1.objects.filter(username=username).exists():
+                # The account belongs to CustomUserModel1
+                # Add any additional logic here
+                pass
+            elif CustomUserModel2.objects.filter(username=username).exists():
+                # The account belongs to CustomUserModel2
+                # Add any additional logic here
+                pass
+            login(request, user)
+            return redirect('home') """
 
 
 def logout_view(request):
